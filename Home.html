@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shipment Information</title>
+    <style>
+        /* Set a background color and text color */
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Center the content on the page */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Add some basic styling for better presentation */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shipment Information</h1>
+        <form id="shipmentForm">
+            <table>
+                <tr>
+                    <th>ShipmentID</th>
+                    <th>Port</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Driver</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><input id="TextboxID" type="text" name="ShipmentID" placeholder="ID" required></td>
+                    <td><input type="text" name="Port" placeholder="Port" required></td>
+                    <td><input type="text" name="Customer" placeholder="Customer" required></td>
+                    <td><input type="date" name="Date" required></td>
+                    <td><input type="text" name="Driver" placeholder="Driver" required></td>
+                    <td><button type="button" id="ButtonAdd" onclick="addRow()">Add</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript function to add a new row to the table
+        function addRow() {
+            var form = document.getElementById("shipmentForm");
+            var table = form.getElementsByTagName('table')[0];
+            var newRow = table.insertRow(table.rows.length - 1);
+            
+            // Clone the input fields from the first row
+            for (var i = 0; i < 5; i++) {
+                var cell = newRow.insertCell(i);
+                if (i === 3) {
+                    var input = document.createElement('input');
+                    input.type = 'date';
+                    input.name = 'Date';
+                    input.required = true;
+                    cell.appendChild(input);
+                } else {
+                    var input = form.getElementsByTagName('input')[i].cloneNode(true);
+                    input.value = ''; // Clear input field in the new row
+                    cell.appendChild(input);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
