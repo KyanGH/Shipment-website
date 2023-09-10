@@ -1,37 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Index page!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
     <style>
-      img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        float: left;
-        margin-right: 10px;
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #3498db 0%, #ffffff 100%);
+        font-family: Arial, sans-serif;
       }
 
-      .username {
-        font-weight: bold;
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-box {
+        width: 350px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .login-box h2 {
+        color: #333;
+      }
+
+      .login-box input[type="text"],
+      .login-box input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #3498db;
+        outline: none;
+      }
+
+      .login-box input[type="submit"] {
+        width: 100%;
+        background: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .login-box input[type="submit"]:hover {
+        background: #2980b9;
       }
     </style>
   </head>
   <body>
-    <img src="images/big-brain-fish.jpeg" alt="Image of fish" />
-    <p class="username">@Kyan</p>
-    <p>A big brain fish!</p>
-    <h1>Fish is smart!</h1>
-    <!--Comment-->
+    <div class="container">
+      <div class="login-box">
+        <h2>Login</h2>
+        <form action="#" method="post">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
   </body>
-</html>
-=======
-<html>
-  <title>Log in page</title>
-  <head>
-    This is head
-  </head>
-  <body>
-    <p>WHAT IS THAT MELODY!!</p>
-  </body>
-  <script></script>
 </html>

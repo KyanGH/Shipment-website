@@ -1,13 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="HTML, CSS" />
-    <meta name="description" />
-    <title>Document</title>
+    <title>Shipping Information</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #0077b6, #0094d0);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 12px;
+      }
+
+      th {
+        background-color: #0094d0;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      tr:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    </style>
   </head>
   <body>
-    <p>Learn HTML <i>REALLY?</i></p>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Shipping Container</th>
+        <th>Transportation Type</th>
+        <th>Driver's Name</th>
+        <th>Driver's ID</th>
+        <th>Vehicle Number</th>
+        <th>Port</th>
+        <th>Status</th>
+        <th>Company</th>
+      </tr>
+      <tr>
+        <td><input type="date" /></td>
+        <td><input type="datetime-local" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+      </tr>
+      <!-- Add more rows with data as needed -->
+    </table>
   </body>
 </html>
