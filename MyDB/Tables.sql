@@ -1,11 +1,13 @@
-CREATE TABLE Drivers (
+CREATE TABLE Drivers
+(
     DriverID INT PRIMARY KEY,
     UserName VARCHAR(255) NOT NULL,
     Password VARCHAR(255) NOT NULL,
     DriversName VARCHAR(255)
 );
 
-CREATE TABLE ShippingInfo (
+CREATE TABLE ShippingInfo
+(
     ShippingID INT PRIMARY KEY,
     Date DATE,
     Time TIME,
