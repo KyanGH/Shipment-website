@@ -4,62 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to bottom, #3498db 0%, #ffffff 100%);
-        font-family: Arial, sans-serif;
-      }
-
-      .container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .login-box {
-        width: 350px;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        text-align: center;
-      }
-
-      .login-box h2 {
-        color: #333;
-      }
-
-      .login-box input[type="text"],
-      .login-box input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-bottom: 2px solid #3498db;
-        outline: none;
-      }
-
-      .login-box input[type="submit"],
-      .login-box input[type="reset"] {
-        width: 49%; /* Adjust the width of both buttons */
-        background: #3498db;
-        color: #fff;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .login-box input[type="submit"]:hover,
-      .login-box input[type="reset"]:hover {
-        background: #2980b9;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styleLogin.css" />
   </head>
   <body>
     <div class="container">
@@ -81,35 +26,10 @@
             required
           />
           <input type="submit" value="Login" onclick="performLogin()" />
-          <input type="reset" value="Clear" onclick="clearForm()" />
-          <!-- Updated button value and added onclick handler -->
         </form>
       </div>
     </div>
-    <script>
-      function performLogin() {
-        var inputUsername = document.getElementById("username");
-        localUsername = inputUsername.value;
-
-        var inputPassword = document.getElementById("password");
-        localPassword = inputPassword.value;
-        if (localUsername == "Kyan" && localPassword == "123") {
-          window.location.href = "index.html";
-        } else {
-          alert("Check if Username or Password is correct");
-        }
-      }
-
-      function clearForm() {
-        // Clear input fields and any previous error messages
-        var inputUsername = document.getElementById("username");
-        var inputPassword = document.getElementById("password");
-
-        inputUsername.value = "";
-        inputPassword.value = "";
-
-        // You can also clear any error messages here if needed
-      }
-    </script>
+    <div><a href="index.html">Go to main page.</a></div>
   </body>
+  <script src="web.js"></script>
 </html>
