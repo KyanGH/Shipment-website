@@ -6,32 +6,75 @@
     <link rel="stylesheet" type="text/css" href="styleIndex.css" />
   </head>
   <body>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Shipping Container</th>
-        <th>Transportation Type</th>
-        <th>Driver's Name</th>
-        <th>Driver's ID</th>
-        <th>Vehicle Number</th>
-        <th>Port</th>
-        <th>Status</th>
-        <th>Company</th>
-      </tr>
-      <tr>
-        <td><input type="date" /></td>
-        <td><input type="datetime-local" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
-      </tr>
-      <!-- Add more rows with data as needed -->
-    </table>
+    <form id="shipmentForm">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Shipping Container</th>
+          <th>Transportation Type</th>
+          <th>Driver's Name</th>
+          <th>Driver's ID</th>
+          <th>Vehicle Number</th>
+          <th>Port</th>
+          <th>Status</th>
+          <th>Company</th>
+        </tr>
+        <tr>
+          <td><input type="date" name="shipmentDate" required /></td>
+          <td>
+            <input
+              type="text"
+              name="shipmentContainer"
+              required
+              placeholder="Container ID"
+            />
+          </td>
+          <td>
+            <select name="transportationType" required>
+              <option value="import">Import</option>
+              <option value="export">Export</option>
+            </select>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="driverName"
+              required
+              placeholder="Driver's Name"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              name="driverID"
+              required
+              placeholder="Driver's ID"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              name="vehicleNumber"
+              required
+              placeholder="Vehicle Number"
+            />
+          </td>
+          <td><input type="text" name="port" required placeholder="Port" /></td>
+          <td>
+            <select name="shipmentStatus" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" name="company" required placeholder="Company" />
+          </td>
+        </tr>
+        <!-- Add more rows with data as needed -->
+      </table>
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>

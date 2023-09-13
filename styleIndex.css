@@ -1,42 +1,69 @@
+/* Apply styles to the entire page */
 body {
-    background: linear-gradient(to bottom, #0077b6, #0094d0);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: white;
-  }
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #3498db 0%, #ffffff 100%);
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-  }
+/* Apply styles to the form container */
+#shipmentForm {
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  th,
-  td {
-    text-align: left;
-    padding: 12px;
-  }
+/* Apply styles to the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
 
-  th {
-    background-color: #0094d0;
-    color: white;
-  }
+/* Apply styles to table headers */
+th {
+  background-color: #3498db; /* Blue header background */
+  color: #ffffff; /* White text color */
+  padding: 10px;
+  text-align: left;
+}
 
-  tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
+/* Apply styles to table data cells */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #cccccc; /* Gray border at the bottom of each row */
+}
 
-  tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+/* Apply styles to input fields and select elements */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+  width: 80px;
+  padding: 10px;
+  margin-bottom: 15px; /* Added space between input elements */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Includes padding and border in the width calculation */
+}
 
-  tr:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
+/* Increase the width of the "Port" input specifically */
+input[name="port"] {
+  width: 100px; /* Adjust the width as needed */
+}
 
-  input[type="text"] {
-    width: 100%;
-    box-sizing: border-box;
-  }
+/* Apply styles to the submit button */
+button[type="submit"] {
+  background-color: #3498db; /* Blue button background */
+  color: #ffffff; /* White text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the submit button */
+button[type="submit"]:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
