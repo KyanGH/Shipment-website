@@ -72,11 +72,11 @@ def print_table(connection, cursor, table_name):
 #_______________________________________________________________________
 
 # Define a function to add a new user
-def add_user(connection, cursor, name, email):
+def add_user(connection, cursor, name, password):
     try:
         # Insert a new user into the Users table
-        insert_query = "INSERT INTO Users (Name, Email) VALUES (%s, %s)"
-        user_data = (name, email)
+        insert_query = "INSERT INTO Users (Name, Password) VALUES (%s, %s)"
+        user_data = (name, password)
         cursor.execute(insert_query, user_data)
         connection.commit()
         print(f"User {name} added successfully")
@@ -86,26 +86,31 @@ def add_user(connection, cursor, name, email):
 #_______________________________________________________________________
 
 # Define a function to authenticate a user
-def authenticate_user(connection, cursor, username, password):
+def authenticate_user(connection, cursor, username, provided_password):
     try:
         # Query the database for the user's credentials
-        select_query = "SELECT * FROM Users WHERE Name = %s AND Password = %s"
-        user_data = (username, password)
-        cursor.execute(select_query, user_data)
+        select_query = "SELECT Password FROM Users WHERE Name = %s"
+        cursor.execute(select_query, (username,))
 
         # Fetch the user data (if found)
-        user = cursor.fetchone()
+        user_data = cursor.fetchone()
 
-        if user:
-            print(f"Authentication successful for user: {user[1]}")
-            return True
+        if user_data:
+            stored_password = user_data[0]  
+            if provided_password == stored_password:
+                print(f"Authentication successful for user: {username}")
+                return True
+            else:
+                print("Authentication failed. Invalid username or password.")
+                return False
         else:
-            print("Authentication failed. Invalid username or password.")
+            print("Authentication failed. User not found.")
             return False
 
     except Exception as e:
         print(f"Error: {str(e)}")
         return False
+
 #_______________________________________________________________________
 
 # Create a connection and cursor
@@ -114,13 +119,15 @@ if connection:
     cursor = connection.cursor()
 
     # Example usage of functions
-    delete_user_by_name(connection, cursor, 'John Doe')
-    delete_user_by_id(connection, cursor, 123)
-    print_table(connection, cursor, 'Users')
+    #add_user(connection, cursor,'Kyan', '123')
+    #delete_user_by_name(connection, cursor, 'Kyan')
+    #delete_user_by_id(connection, cursor, 123)
+    #authenticate_user(connection, cursor, 'Kyan', '123')
+    #print_table(connection, cursor, 'Users')
 
     # Close the cursor and connection
-    cursor.close()
-    connection.close()
-    print("Connection closed")
+    #cursor.close()
+    #connection.close()
+    #print("Connection closed")
 #_______________________________________________________________________
 
